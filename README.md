@@ -1,4 +1,4 @@
-# TAPDANCE-2
+# TAPDANCEV2
 Porting of TAPDANCE modified version from Tim Starr
 
 ## Download mysql (8.0.19) through homebrew and set up password
