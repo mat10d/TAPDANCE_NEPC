@@ -215,6 +215,10 @@ print "3.5 complete - Identified short seqeunces and label them min\n";
 $sth = $dbh->prepare("alter table illumina_without_IRDR_$proj add index (type)");
 $sth->execute;
 
+#necessary variable type alteration
+$sth = $dbh->prepare("alter table illumina_without_IRDR_$proj modify insertion_sequence varchar(290)"); 
+$sth->execute;
+
 $sth = $dbh->prepare("alter table illumina_without_IRDR_$proj add index (insertion_sequence)"); 
 $sth->execute;
 
@@ -264,7 +268,8 @@ while ((@row) = $sth->fetchrow_array) {
 close OUT;
 print "5.1 Created first mapping file (4map_1.txt) and copied to /mapping directory\n";
 print "5.1 Started bowtie mapping iteration #1\n";
-system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /home/starrt2/shared/genomes/mm10/bowtieindex/genome mapping/4map_1.txt mapping/mapping1.txt');
+#need to specify this relative to bowtie position
+system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /Users/matteodibernardo/Desktop/bowtie-1.1.2/indexes/mm9/mm9 mapping/4map_1.txt mapping/mapping1.txt');
 print "5.1 Finished bowtie iteration #1\n";
 
 # Load bowtie iteration #1 into the MySQL database
@@ -299,7 +304,8 @@ close OUT;
 
 print "5.2 Created second mapping file (4map_2.txt) and copied to /mapping directory\n";
 print "5.2 Started bowtie mapping iteration #2\n";
-system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /home/starrt2/shared/genomes/mm10/bowtieindex/genome mapping/4map_2.txt mapping/mapping2.txt');
+#need to specify this relative to bowtie position
+system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /Users/matteodibernardo/Desktop/bowtie-1.1.2/indexes/mm9/mm9 mapping/4map_1.txt mapping/mapping1.txt');
 print "5.2 Finished bowtie iteration #2\n";
 
 $sth = $dbh->prepare("load DATA local INFILE 'mapping/mapping2.txt' INTO TABLE illumina_blastout_$proj ");
@@ -328,7 +334,8 @@ close OUT;
 
 print "5.3 Created third mapping file (4map_3.txt) and copied to /mapping directory\n";
 print "5.3 Started bowtie mapping iteration #3\n";
-system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /home/starrt2/shared/genomes/mm10/bowtieindex/genome mapping/4map_3.txt mapping/mapping3.txt');
+#need to specify this relative to bowtie position
+system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /Users/matteodibernardo/Desktop/bowtie-1.1.2/indexes/mm9/mm9 mapping/4map_1.txt mapping/mapping1.txt');
 print "5.3 Finished bowtie iteration #3\n";
 
 $sth = $dbh->prepare("load DATA local INFILE 'mapping/mapping3.txt' INTO TABLE illumina_blastout_$proj ");
@@ -357,7 +364,8 @@ while ((@row) = $sth->fetchrow_array) {
 close OUT;
 print "5.4 Created fourth mapping file (4map_4.txt) and copied to /mapping directory\n";
 print "5.4 Started bowtie mapping iteration #4\n";
-system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /home/starrt2/shared/genomes/mm10/bowtieindex/genome mapping/4map_4.txt mapping/mapping4.txt');
+#need to specify this relative to bowtie position
+system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /Users/matteodibernardo/Desktop/bowtie-1.1.2/indexes/mm9/mm9 mapping/4map_1.txt mapping/mapping1.txt');
 print "5.4 Finished bowtie iteration #4\n";
 
 $sth = $dbh->prepare("load DATA local INFILE 'mapping/mapping4.txt' INTO TABLE illumina_blastout_$proj ");
@@ -386,7 +394,8 @@ while ((@row) = $sth->fetchrow_array) {
 close OUT;
 print "5.5 Created fifth mapping file (4map_5.txt) and copied to /mapping directory\n";
 print "5.5 Started bowtie mapping iteration #5\n";
-system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /home/starrt2/shared/genomes/mm10/bowtieindex/genome mapping/4map_5.txt mapping/mapping5.txt');
+#need to specify this relative to bowtie position
+system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /Users/matteodibernardo/Desktop/bowtie-1.1.2/indexes/mm9/mm9 mapping/4map_1.txt mapping/mapping1.txt');
 print "5.5 Finished bowtie iteration #5\n";
 
 $sth = $dbh->prepare("load DATA local INFILE 'mapping/mapping5.txt' INTO TABLE illumina_blastout_$proj ");

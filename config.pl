@@ -19,10 +19,10 @@ use DBI;
 
  $dbh;
  
- $db_name     = 'starrt2db';
- $db_username = 'starrt2';
- $db_password = 'CvHE2kQ9a';
- $db_host     = 'mysql-starrt2;mysql_local_infile=1';
+ $db_name     = 'tapdance';
+ $db_username = 'root';
+ $db_password = 'tapdance2password!';
+ $db_host     = 'localhost;mysql_local_infile=1';
  $db_type     = 'mysql';
 
  $data_source = "DBI:$db_type:database=$db_name;host=$db_host";
@@ -35,10 +35,10 @@ $dbh = DBI->connect($data_source, $db_username, $db_password,
 
 #######################################################################################
 # Set the project name suffix and the annotation file
-$proj = 'deleteme_test1';
+$proj = 'colon';
 # TAPDANCE will create ~18 tables with this suffix for the table name
 
-$annotation_file = 'lib/mm10.bed';
+$annotation_file = 'lib/mm9.bed';
 
 #######################################################################################
 # Set the stringency levels for including insertions and calculating CIS's
