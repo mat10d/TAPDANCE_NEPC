@@ -1,0 +1,13 @@
+#!/bin/bash -l
+#PBS -l nodes=1:ppn=1,mem=15gb,walltime=24:00:00
+#PBS -m abe
+
+# Migrate to your run directory (i.e. where the config.pl file, data nd lib directories are located for this specific run)
+
+cd /home/starrt2/starrt2/tapdance/projects/PUT_THE_CORRECT_DIRECTORY_HERE
+
+module load R
+module load bowtie/1.0.0
+
+perl lib/TAPDANCE.pl
+perl lib/TAP2.pl
