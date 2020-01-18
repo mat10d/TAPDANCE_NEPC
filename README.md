@@ -4,7 +4,7 @@ Porting of TAPDANCE modified version from Tim Starr. General instructions on com
 
 ### Set up:
 
-##### Download mysql (8.0.19) through homebrew and set up password (password in config.pl is "tapdance2password")
+#### Download mysql (8.0.19) through homebrew and set up password (password in config.pl is "tapdance2password")
 
 	brew install mysql
 
@@ -17,13 +17,13 @@ Porting of TAPDANCE modified version from Tim Starr. General instructions on com
 	mysql > CREATE DATABASE tapdance;
 	mysql > QUIT;
 	
-##### Set up the Perl5 Database Interface driver for the MySQL database (DBD-mysql-4.050)
+#### Set up the Perl5 Database Interface driver for the MySQL database (DBD-mysql-4.050)
 
 	cpanm DBD::mysql
 	cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 	cpan DBD::mysql
 
-##### Specify path to bowtie (using bowtie 1.1.2)
+#### Specify path to bowtie (using bowtie 1.1.2)
 
 Need to add the mm9 genome in the indexes subfolder of downloaded bowtie-1.1.2 folder.
 
