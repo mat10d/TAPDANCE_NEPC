@@ -23,9 +23,9 @@ Porting of TAPDANCE modified version from Tim Starr. General instructions on com
 	cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 	cpan DBD::mysql
 
-#### Specify path to bowtie (using bowtie 1.1.2)
+#### Specify path to bowtie (using bowtie 1.2.3--newest bowtie 1 update)
 
-Need to add the mm9 genome in the indexes subfolder of downloaded bowtie-1.1.2 folder.
+Need to add the mm10 genome folder in the indexes subfolder of downloaded bowtie-1.2.3 folder (http://bowtie-bio.sourceforge.net/index.shtml).
 
 	PATH=$PATH:/Users/matteodibernardo/Desktop/bowtie-1.1.2/
 	
