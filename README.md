@@ -27,13 +27,20 @@ Porting of TAPDANCE modified version from Tim Starr. General instructions on com
 
 Need to add the mm10 genome folder in the indexes subfolder of downloaded bowtie-1.2.3 folder (http://bowtie-bio.sourceforge.net/index.shtml).
 
-	PATH=$PATH:/Users/matteodibernardo/Desktop/bowtie-1.1.2/
+	PATH=$PATH:/Users/matteo/Desktop/CIS_results/bowtie-1.2.3
 	
 ### Running TAPDANCE:
 
 Need to switch into working directory (that contains config.pl, /data, /lib folders).
 	
+	cd Desktop/CIS_results/TAPDANCE/final_tapdance_run
+	
+To map all the fragments to reads, run the first perl script.
+	
 	perl lib/TAPDANCE.pl
+	
+To run CIS identification for various metadata files, there is no need to remap fragments, only the following command is required. Please edit the $library_percent variable in config.pl if you want to change the insertion threshold.
+
 	perl lib/TAP2.pl
 
-Primary results will be contained in results/all/cis_all-nr-colon-0.0001
+Primary results will be contained in results/[name of the metadata descriptor in the metadata.tab file]. Ensure that you save and export and rename results folders, as risk of results being overwritten by re-runs.
