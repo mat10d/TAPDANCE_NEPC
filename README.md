@@ -17,6 +17,8 @@ Porting of TAPDANCE modified version from Tim Starr. General instructions on com
 	mysql > CREATE DATABASE tapdance;
 	mysql > QUIT;
 	
+There is no need to redownload mysql and setup the mysql password each time. For any subsequent work, proceed with below instructions.
+	
 #### Set up the Perl5 Database Interface driver for the MySQL database (DBD-mysql-4.050)
 
 	cpanm DBD::mysql
