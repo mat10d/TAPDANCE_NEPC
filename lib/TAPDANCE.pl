@@ -269,7 +269,9 @@ close OUT;
 print "5.1 Created first mapping file (4map_1.txt) and copied to /mapping directory\n";
 print "5.1 Started bowtie mapping iteration #1\n";
 #need to specify this relative to bowtie position
-system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /Users/matteodibernardo/Desktop/bowtie-1.1.2/indexes/mm9/mm9 mapping/4map_1.txt mapping/mapping1.txt');
+my $cmd = "bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f $bowtie_path mapping/4map_1.txt mapping/mapping1.txt";
+system($cmd);
+#system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f $bowtie_path mapping/4map_1.txt mapping/mapping1.txt');
 print "5.1 Finished bowtie iteration #1\n";
 
 # Load bowtie iteration #1 into the MySQL database
@@ -305,7 +307,9 @@ close OUT;
 print "5.2 Created second mapping file (4map_2.txt) and copied to /mapping directory\n";
 print "5.2 Started bowtie mapping iteration #2\n";
 #need to specify this relative to bowtie position
-system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /Users/matteodibernardo/Desktop/bowtie-1.1.2/indexes/mm9/mm9 mapping/4map_1.txt mapping/mapping1.txt');
+my $cmd = "bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f $bowtie_path mapping/4map_2.txt mapping/mapping2.txt";
+system($cmd);
+#system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f $bowtie_path mapping/4map_2.txt mapping/mapping2.txt');
 print "5.2 Finished bowtie iteration #2\n";
 
 $sth = $dbh->prepare("load DATA local INFILE 'mapping/mapping2.txt' INTO TABLE illumina_blastout_$proj ");
@@ -335,7 +339,9 @@ close OUT;
 print "5.3 Created third mapping file (4map_3.txt) and copied to /mapping directory\n";
 print "5.3 Started bowtie mapping iteration #3\n";
 #need to specify this relative to bowtie position
-system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /Users/matteodibernardo/Desktop/bowtie-1.1.2/indexes/mm9/mm9 mapping/4map_1.txt mapping/mapping1.txt');
+my $cmd = "bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f $bowtie_path mapping/4map_3.txt mapping/mapping3.txt";
+system($cmd);
+#system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f $bowtie_path mapping/4map_3.txt mapping/mapping3.txt');
 print "5.3 Finished bowtie iteration #3\n";
 
 $sth = $dbh->prepare("load DATA local INFILE 'mapping/mapping3.txt' INTO TABLE illumina_blastout_$proj ");
@@ -365,7 +371,9 @@ close OUT;
 print "5.4 Created fourth mapping file (4map_4.txt) and copied to /mapping directory\n";
 print "5.4 Started bowtie mapping iteration #4\n";
 #need to specify this relative to bowtie position
-system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /Users/matteodibernardo/Desktop/bowtie-1.1.2/indexes/mm9/mm9 mapping/4map_1.txt mapping/mapping1.txt');
+my $cmd = "bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f $bowtie_path mapping/4map_4.txt mapping/mapping4.txt";
+system($cmd);
+#system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f $bowtie_path mapping/4map_4.txt mapping/mapping4.txt');
 print "5.4 Finished bowtie iteration #4\n";
 
 $sth = $dbh->prepare("load DATA local INFILE 'mapping/mapping4.txt' INTO TABLE illumina_blastout_$proj ");
@@ -395,7 +403,9 @@ close OUT;
 print "5.5 Created fifth mapping file (4map_5.txt) and copied to /mapping directory\n";
 print "5.5 Started bowtie mapping iteration #5\n";
 #need to specify this relative to bowtie position
-system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f /Users/matteodibernardo/Desktop/bowtie-1.1.2/indexes/mm9/mm9 mapping/4map_1.txt mapping/mapping1.txt');
+my $cmd = "bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f $bowtie_path mapping/4map_5.txt mapping/mapping5.txt";
+system($cmd);
+#system ('bowtie -t -a --best --strata -v 3 -m 1 --suppress 5,6,7 -f $bowtie_path mapping/4map_5.txt mapping/mapping5.txt');
 print "5.5 Finished bowtie iteration #5\n";
 
 $sth = $dbh->prepare("load DATA local INFILE 'mapping/mapping5.txt' INTO TABLE illumina_blastout_$proj ");

@@ -19,9 +19,9 @@ use DBI;
 
  $dbh;
  
- $db_name     = 'tapdance';
+ $db_name     = 'tapdance_complete';
  $db_username = 'root';
- $db_password = 'tapdance2password!';
+ $db_password = 'tap2password';
  $db_host     = 'localhost;mysql_local_infile=1';
  $db_type     = 'mysql';
 
@@ -35,10 +35,11 @@ $dbh = DBI->connect($data_source, $db_username, $db_password,
 
 #######################################################################################
 # Set the project name suffix and the annotation file
-$proj = 'colon';
+$proj = 'prostate';
 # TAPDANCE will create ~18 tables with this suffix for the table name
-
-$annotation_file = 'lib/mm9.bed';
+$annotation_file = 'lib/mm10.bed';
+# Set the bowtie directory path
+$bowtie_path = '/Users/matteo/Desktop/bowtie-1.2.3/indexes/mm10/mm10';
 
 #######################################################################################
 # Set the stringency levels for including insertions and calculating CIS's
@@ -46,7 +47,7 @@ $annotation_file = 'lib/mm9.bed';
 # The library_percent threshold will result in discarding mapped sequences where the
 #	read count for that insertion is lower than the library_percent based on total
 #	read counts assigned to that library.
-$library_percent ='0.0001';
+$library_percent ='0.01';
 
 # The CIS and cocis thresholds will require the pvalue to be below the pvalue listed
 #	to be reported as a CIS.

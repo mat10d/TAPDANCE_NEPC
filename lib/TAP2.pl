@@ -223,7 +223,7 @@ print "10.3 complete\n";
 #11.7
 	    foreach $lib(@libSizes) {
 		$sth = $dbh->prepare("load DATA local INFILE 'CIS/final_cis_named_$lib.txt' INTO TABLE sort2_$proj");
-$sth->execute;
+		$sth->execute;
 		resolve_cis();
 }
 
