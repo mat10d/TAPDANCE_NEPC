@@ -33,6 +33,8 @@ Need to add the mm10 genome folder in the indexes subfolder of downloaded bowtie
 	
 ### Running TAPDANCE:
 
+Get the seqs.tab data [here]([url](https://www.dropbox.com/scl/fi/fqlqlj6et1ezymaqqsm9g/seqs.tab?rlkey=pdizvin409j0783d57nbkf3j1&dl=0)).
+
 Need to switch into working directory (that contains config.pl, /data, /lib folders).
 	
 	cd Desktop/CIS_results/TAPDANCE/final_tapdance_run
