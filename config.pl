@@ -77,10 +77,6 @@ sub resolve_IRDR {
 #	Also, the underscores represent wild-cards.  In this instance there are 5 wildcards.
 #	The (decoded_sequence,32) must match the length of the search string, which includes the wild-cards
 #	and the % sign. (i.e. everything within the single quotes).
-# $sth = $dbh->prepare("create table illumina_without_IRDR_$proj select library,id,substring(decoded_sequence,32) as insertion_sequence, 'good' as type from illumina_decoded_$proj where decoded_sequence like '_____TGTATGTAAACTTCCGACTTCAACTG%'");
-# $sth->execute;
-# $sth = $dbh->prepare("insert into illumina_without_IRDR_$proj select library,id,substring(decoded_sequence,31) as insertion_sequence, 'good' as type from illumina_decoded_$proj where decoded_sequence like '_____TGTATGTAACTTCCGACTTCAACTG%'");
-# $sth->execute;
 
 $sth = $dbh->prepare("create table illumina_without_IRDR_$proj select library,id,substring(decoded_sequence,30) as insertion_sequence, 'good' as type from illumina_decoded_$proj where decoded_sequence like '___TGTATGTAAACTTCCGACTTCAACTG%'");
 $sth->execute;
