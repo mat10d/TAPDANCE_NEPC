@@ -1,0 +1,4 @@
+# Specific files and directories
+data/seqs.tab
+mapping/*
+.DS_Store
