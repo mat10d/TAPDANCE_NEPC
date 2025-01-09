@@ -1,8 +1,10 @@
-# TAPDANCEV2
+# TAPDANCE_NEPC
 
 Porting of TAPDANCE modified version from Tim Starr. General instructions on command line operability included below.
 
 ### Set up:
+
+Retrieve seqs.tab (large file of mapped sequences) and place in data.
 
 #### Download mysql (8.0.19) through homebrew and set up password (password in config.pl is "tapdance2password")
 
@@ -37,7 +39,7 @@ Get the seqs.tab data [here](https://www.dropbox.com/scl/fi/fqlqlj6et1ezymaqqsm9
 
 Need to switch into working directory (that contains config.pl, /data, /lib folders).
 	
-	cd Desktop/CIS_results/TAPDANCE/final_tapdance_run
+	cd TAPDANCE_NEPC
 	
 To map all the fragments to reads, run the first perl script.
 	
