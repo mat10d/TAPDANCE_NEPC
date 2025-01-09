@@ -2,3 +2,4 @@
 data/seqs.tab
 mapping/*
 .DS_Store
+results/.DS_Store
